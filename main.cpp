@@ -1,53 +1,32 @@
 // Fig. 3.9: AccountTest.cpp
 // Displaying and updating Account balances.
 #include <iostream>
-#include "Account.h"
+#include "Invoice.h"
+
+void printInvoice(Invoice invoice);
 
 using namespace std;
 
 int main()
 {
-	Account account1{"Jane Green", 50};
-	Account account2{"John Blue", -7};
+	Invoice i1{"63A", "widget", 10, 1, 0.20, 0.0};
+	Invoice i2{"72C", "gadget", 10, 2, -0.10, 0.10};
+	Invoice i3{"81E", "thing1", 10, 4, 0.10, 0.10};
+	Invoice i4{"90G", "thing2", 10, 10, 0.0, 0.20};
 
-	// display initial balance of each object
-	cout << "account1: " << account1.getName() << " balance is $"
-	     << account1.getBalance();
-	cout << "\naccount2: " << account2.getName() << " balance is $"
-	     << account2.getBalance();
+	printInvoice(i1);
+	printInvoice(i2);
+	printInvoice(i3);
+	printInvoice(i4);
 
-	cout << "\n\nEnter deposit amount for account1: "; // prompt
-	int depositAmount;
-	cin >> depositAmount; // obtain user input
-	cout << "adding " << depositAmount << " to account1 balance";
-	account1.deposit(depositAmount); // add to account1's balance
+}
 
-	// display balances
-	cout << "\n\naccount1: " << account1.getName() << " balance is $"
-	     << account1.getBalance();
-	cout << "\naccount2: " << account2.getName() << " balance is $"
-	     << account2.getBalance();
-
-	cout << "\n\nEnter deposit amount for account2: "; // prompt
-	cin >> depositAmount; // obtain user input
-	cout << "adding " << depositAmount << " to account2 balance";
-	account2.deposit(depositAmount); // add to account2 balance
-
-	// display balances
-	cout << "\n\naccount1: " << account1.getName() << " balance is $"
-	     << account1.getBalance();
-	cout << "\naccount2: " << account2.getName() << " balance is $"
-	     << account2.getBalance() << endl;
-
-	cout << "\n\nEnter withdrawal amount for account2: "; // prompt
-	int withdrawAmount{};
-	cin >> withdrawAmount; // obtain user input
-	cout << "subtracting " << withdrawAmount << " from account2 balance";
-	account2.withdraw(withdrawAmount); // subtract from account2 balance
-
-	// display balances
-	cout << "\n\naccount1: " << account1.getName() << " balance is $"
-	     << account1.getBalance();
-	cout << "\naccount2: " << account2.getName() << " balance is $"
-	     << account2.getBalance() << endl;
+void printInvoice(Invoice invoice) {
+	cout << "Invoice:\n\tPart Number: " << invoice.getPartNumber()
+			<< "\n\tDescription: " << invoice.getDescription()
+			<< "\n\tQuantity: " << invoice.getQuantity()
+			<< "\n\tPrice Per Item: " << invoice.getPricePerItem()
+			<< "\n\tValueAdded tax: " << invoice.getValueAddedTax()
+			<< "\n\tDiscount: " << invoice.getDiscountRate()
+			<< "\n\tAmount: " << invoice.getInvoiceAmount() << '\n';
 }
