@@ -1,27 +1,17 @@
-// Fig. 3.9: AccountTest.cpp
-// Displaying and updating Account balances.
+// 3.12 (Date Class) Create a class called Date that includes three pieces of information as data
+// members—a month (type int), a day (type int) and a year (type int). Your class should have a
+// constructor with three parameters that uses the parameters to initialize the three data members.
+// For the purpose of this exercise, assume that the values provided for the year and day are correct,
+// but ensure that the month value is in the range 1–12; if it isn’t, set the month to 1. Provide a
+// set and a get function for each data member. Provide a member function displayDate that displays
+// the month, day and year separated by forward slashes (/). Write a test program that demonstrates
+// class Date’s capabilities.
 #include <iostream>
-#include "MotorVehicle.h"
-
-void printMotorVehicl(MotorVehicle m);
+#include "Date.h"
 
 using namespace std;
 
 int main()
 {
-	MotorVehicle m1{"Cadillac", "Black", 355};
-	cout << "Enter fuel type for " << m1.getColor() << ' ' << m1.getMake()
-	     << " (" << m1.getEngineCapacity() << "):\n";
-	std::string fuelType{};
-	std::cin >> fuelType;
-	m1.setFuelType(fuelType);
-
-	cout << "Enter year of manufacture  " << m1.getColor() << ' ' << m1.getMake()
-	     << " (" << m1.getEngineCapacity() << "):\n";
-	int yearOfManufacture{};
-	std::cin >> yearOfManufacture;
-	m1.setYearOfManufacture(yearOfManufacture);
-	m1.displayCarDetails();
-
 	return 0;
 }
