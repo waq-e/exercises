@@ -1,32 +1,27 @@
 // Fig. 3.9: AccountTest.cpp
 // Displaying and updating Account balances.
 #include <iostream>
-#include "Invoice.h"
+#include "MotorVehicle.h"
 
-void printInvoice(Invoice invoice);
+void printMotorVehicl(MotorVehicle m);
 
 using namespace std;
 
 int main()
 {
-	Invoice i1{"63A", "widget", 10, 1, 0.20, 0.0};
-	Invoice i2{"72C", "gadget", 10, 2, -0.10, 0.10};
-	Invoice i3{"81E", "thing1", 10, 4, 0.10, 0.10};
-	Invoice i4{"90G", "thing2", 10, 10, 0.0, 0.20};
+	MotorVehicle m1{"Cadillac", "Black", 355};
+	cout << "Enter fuel type for " << m1.getColor() << ' ' << m1.getMake()
+	     << " (" << m1.getEngineCapacity() << "):\n";
+	std::string fuelType{};
+	std::cin >> fuelType;
+	m1.setFuelType(fuelType);
 
-	printInvoice(i1);
-	printInvoice(i2);
-	printInvoice(i3);
-	printInvoice(i4);
+	cout << "Enter year of manufacture  " << m1.getColor() << ' ' << m1.getMake()
+	     << " (" << m1.getEngineCapacity() << "):\n";
+	int yearOfManufacture{};
+	std::cin >> yearOfManufacture;
+	m1.setYearOfManufacture(yearOfManufacture);
+	m1.displayCarDetails();
 
-}
-
-void printInvoice(Invoice invoice) {
-	cout << "Invoice:\n\tPart Number: " << invoice.getPartNumber()
-			<< "\n\tDescription: " << invoice.getDescription()
-			<< "\n\tQuantity: " << invoice.getQuantity()
-			<< "\n\tPrice Per Item: " << invoice.getPricePerItem()
-			<< "\n\tValueAdded tax: " << invoice.getValueAddedTax()
-			<< "\n\tDiscount: " << invoice.getDiscountRate()
-			<< "\n\tAmount: " << invoice.getInvoiceAmount() << '\n';
+	return 0;
 }

@@ -3,4 +3,4 @@ project(exercises)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(exercises main.cpp Invoice.h)
+add_executable(exercises main.cpp MotorVehicle.h)
