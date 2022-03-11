@@ -18,8 +18,14 @@ public:
 
 	// display account function
 	void displayAccount() {
-		std::cout << "\n\naccount: " << name << " balance is $"
-		     << balance;
+		std::cout << "account: " << name << " balance is $"
+		          << balance << '\n';
+	}
+
+	// display account function
+	void displayAccount(Account a) {
+		std::cout << "account: " << a.getName() << " balance is $"
+		          << a.getBalance() << '\n';
 	}
 
 	// function that deposits (adds) only a valid amount to the balance

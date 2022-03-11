@@ -35,6 +35,12 @@
 
 using namespace std;
 
+// display account function
+void displayAccount(Account a) {
+	std::cout << "account: " << a.getName() << " balance is $"
+	          << a.getBalance() << '\n';
+}
+
 int main()
 {
 	Account account1{"Jane Green", 50};
@@ -44,22 +50,22 @@ int main()
 	account1.displayAccount();
 	account2.displayAccount();
 
-	cout << "\n\nEnter deposit amount for account1: "; // prompt
+	cout << "Enter deposit amount for account1: "; // prompt
 	int depositAmount;
 	cin >> depositAmount; // obtain user input
-	cout << "adding " << depositAmount << " to account1 balance";
+	cout << "adding " << depositAmount << " to account1 balance" << '\n';
 	account1.deposit(depositAmount); // add to account1's balance
 
 	// display balances
-	account1.displayAccount();
-	account2.displayAccount();
+	displayAccount(account1);
+	displayAccount(account2);
 
-	cout << "\n\nEnter deposit amount for account2: "; // prompt
+	cout << "Enter deposit amount for account2: "; // prompt
 	cin >> depositAmount; // obtain user input
-	cout << "adding " << depositAmount << " to account2 balance";
+	cout << "adding " << depositAmount << " to account2 balance" << '\n';
 	account2.deposit(depositAmount); // add to account2 balance
 
 	// display balances
-	account1.displayAccount();
-	account2.displayAccount();
+	account1.displayAccount(account1);
+	account2.displayAccount(account2);
 }
