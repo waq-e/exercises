@@ -4,25 +4,35 @@
 using namespace std;
 
 int main() {
-	int kiloDriven{0};
-	int totalKiloDriven{0};
-	int totalLitersUsed{0};
-	cout << "Enter kilometers driven (-1 to quit): ";
-	cin >> kiloDriven;
+	int accountNumber{0};
+	cout << "Enter account number (-1 to quit): ";
+	cin >> accountNumber;
 
-	while( kiloDriven >= 0) {
-		cout << "Enter liters used: ";
-		int litersUsed{};
-		cin >> litersUsed;
-		totalKiloDriven += kiloDriven;
-		totalLitersUsed += litersUsed;
-		double thisKms{static_cast<double>(kiloDriven) / static_cast<double>(litersUsed)};
-		cout << "Kms per liter this trip: " << thisKms << '\n';
-		cout << "Total kms per liter: "
-				<< static_cast<double>(totalKiloDriven) / static_cast<double>(totalLitersUsed) << '\n';
-		cout << "\nEnter kilometers driven (-1 to quit): ";
-		cin >> kiloDriven;
-
+	while( accountNumber >= 0) {
+		cout << "Enter beginning balance: ";
+		double beginningBalance{};
+		cin >> beginningBalance;
+		cout << "Enter total charges: ";
+		double totalCharges{};
+		cin >> totalCharges;
+		cout << "Enter total credits: ";
+		double totalCredits{};
+		cin >> totalCredits;
+		cout << "Enter credit limit: ";
+		double creditLimit{};
+		cin >> creditLimit;
+		double balance{beginningBalance + totalCharges - totalCredits};
+		cout << "New balance is " << balance << '\n';
+		cout << "Account:       " << accountNumber << '\n';
+		cout << "Credit limit:  " << creditLimit << '\n';
+		cout << "Balance:       " << balance << '\n';
+		if (balance > creditLimit) {
+			cout << "Credit limit exceeded." << '\n';
+		} else {
+			cout << "New balance is " << balance << '\n';
+		}
+		cout << "Enter account number (-1 to quit): ";
+		cin >> accountNumber;
 	}
 	return 0;
 }
