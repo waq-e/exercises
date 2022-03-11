@@ -13,5 +13,10 @@ using namespace std;
 
 int main()
 {
+	Date d1{12, 26, 1967};
+	d1.displayDate();
+	Date d2{17, 3, 1885};
+	d2.displayDate();
+
 	return 0;
 }
