@@ -16,6 +16,12 @@ public:
 		}
 	}
 
+	// display account function
+	void displayAccount() {
+		std::cout << "\n\naccount: " << name << " balance is $"
+		     << balance;
+	}
+
 	// function that deposits (adds) only a valid amount to the balance
 	void deposit(int depositAmount) {
 		if (depositAmount > 0) { // if the depositAmount is valid
