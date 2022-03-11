@@ -1,38 +1,20 @@
-// Exercise 4.13
+// Exercise 4.15
 #include <iostream>
 
 using namespace std;
 
 int main() {
-	int accountNumber{0};
-	cout << "Enter account number (-1 to quit): ";
-	cin >> accountNumber;
+	double hoursWorked{0.0};
+	cout << "Enter number of hours worked (-1 to quit): ";
+	cin >> hoursWorked;
 
-	while( accountNumber >= 0) {
-		cout << "Enter beginning balance: ";
-		double beginningBalance{};
-		cin >> beginningBalance;
-		cout << "Enter total charges: ";
-		double totalCharges{};
-		cin >> totalCharges;
-		cout << "Enter total credits: ";
-		double totalCredits{};
-		cin >> totalCredits;
-		cout << "Enter credit limit: ";
-		double creditLimit{};
-		cin >> creditLimit;
-		double balance{beginningBalance + totalCharges - totalCredits};
-		cout << "New balance is " << balance << '\n';
-		cout << "Account:       " << accountNumber << '\n';
-		cout << "Credit limit:  " << creditLimit << '\n';
-		cout << "Balance:       " << balance << '\n';
-		if (balance > creditLimit) {
-			cout << "Credit limit exceeded." << '\n';
-		} else {
-			cout << "New balance is " << balance << '\n';
-		}
-		cout << "Enter account number (-1 to quit): ";
-		cin >> accountNumber;
+	while( hoursWorked >= 0) {
+		double accruedLeave{0.0};
+		accruedLeave += 2.0;
+		accruedLeave += hoursWorked * 0.10;
+		cout << "Accrued leave " << accruedLeave << '\n';
+		cout << "Enter number of hours worked (-1 to quit): ";
+		cin >> hoursWorked;
 	}
 	return 0;
 }
