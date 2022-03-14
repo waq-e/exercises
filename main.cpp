@@ -4,23 +4,15 @@
 using namespace std;
 
 int main() {
-	cout << "Enter size to make a hollow square of (1-20): ";
-	int size{};
-	cin >> size;
+	cout << "Enter 5 digit integer to test if palindrome: ";
+	int number{};
+	cin >> number;
 
-	for (int row = 0; row < size; row++) {
-		for (int column = 0; column < size; column++) {
-			if (row == 0 || row == size-1) {
-				cout << "*";
-			} else {
-				if (column == 0 || column == size-1) {
-					cout << "*";
-				} else {
-					cout << " ";
-				}
-			}
-		}
-		cout << '\n';
+	bool outer{(number % 10) == (number / 10000 % 10)};
+	bool inner{(number /10 % 10) == (number / 1000 % 10)};
+	if (outer && inner) {
+		cout << number << " is a palindrome! " << '\n';
+	} else {
+		cout << number << " isn't palindrome. " << '\n';
 	}
-
 }
