@@ -10,15 +10,19 @@ int main() {
 // process 10 students using counter-controlled loop
 	while (studentCounter <= 10) {
 // prompt user for input and obtain value from user
-		cout << "Enter result (1 = pass, 2 = fail): ";
+		cout << "Quiz #" << studentCounter << ": Enter result (1 = pass, 2 = fail): ";
 		int result;
 		cin >> result;
 // if...else is nested in the while statement
 		if (result == 1) {
 			passes = passes + 1;
 		}
-		else {
+		if (result == 2) {
 			failures = failures + 1;
+		}
+		if (result < 1 || result >2) {
+			studentCounter -= 1;
+			cout << "Please enter a 1 or 2 only..\n";
 		}
 // increment studentCounter so loop eventually terminates
 		studentCounter = studentCounter + 1;
