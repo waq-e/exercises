@@ -1,36 +1,10 @@
-// Fig. 4.14: Analysis.cpp
-// Analysis of examination results using nested control statements.
+// Exercise 4.21: Mystery2.cpp
 #include <iostream>
 using namespace std;
-int main() {
-// initializing variables in declarations
-	unsigned int passes{0};
-	unsigned int failures{0};
-	unsigned int studentCounter{1};
-// process 10 students using counter-controlled loop
-	while (studentCounter <= 10) {
-// prompt user for input and obtain value from user
-		cout << "Quiz #" << studentCounter << ": Enter result (1 = pass, 2 = fail): ";
-		int result;
-		cin >> result;
-// if...else is nested in the while statement
-		if (result == 1) {
-			passes = passes + 1;
-		}
-		if (result == 2) {
-			failures = failures + 1;
-		}
-		if (result < 1 || result >2) {
-			studentCounter -= 1;
-			cout << "Please enter a 1 or 2 only..\n";
-		}
-// increment studentCounter so loop eventually terminates
-		studentCounter = studentCounter + 1;
-	}
-// termination phase; prepare and display results
-	cout << "Passed: " << passes << "\nFailed: " << failures << endl;
-// determine whether more than 8 students passed
-	if (passes > 8) {
-		cout << "Bonus to instructor!" << endl;
+int main(){
+	int count = 0;
+	while ( count <= 12 ) {
+		cout << ( count % 3 ? "--->" : "######" ) << endl;
+		++count;
 	}
 }
